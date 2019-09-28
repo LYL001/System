@@ -1,0 +1,9 @@
+#upload {
+    height: 50px;
+    width: 150px;
+    background-color: #32A5F1;
+    color: white;
+    margin-left: 40%;
+    border-radius: 15px;
+    outline: none;
+}

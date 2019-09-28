@@ -1,0 +1,48 @@
+body {
+    margin: 0px;
+    background-color: #EBEBF3;
+}
+
+#header {
+    border-left: 1px solid black;
+    padding-left: 10px;
+    margin: 2% 2% 2% 3%;
+    font-size: 23px;
+    font-family: Georgia;
+}
+
+#content {
+    margin-left: 3%;
+    margin-top: 50px;
+    font-size: 20px;
+    font-family: 宋体;
+    color: black;
+}
+
+#education {
+    height: 35px;
+    margin-top: 40px;
+    width: 20%;
+    margin-left: 1%;
+    text-align: center;
+    background-color: #C9C3D8;
+}
+
+
+/*选择框的样式*/
+
+#content .select_person {
+    height: 30px;
+    margin-top: 40px;
+    width: 15%;
+    text-align: center;
+    background-color: #C9C3D8;
+    margin-left: 1%;
+}
+
+
+/*单位的样式*/
+
+#content span {
+    font-size: 15px;
+}

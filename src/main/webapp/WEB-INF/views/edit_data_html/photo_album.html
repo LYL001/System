@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的相册</title>
+    <link rel="stylesheet" type="text/css" href="../../css/photo_album.css">
+    <link rel="stylesheet" type="text/css" href="../../css/edit_base.css">
+    <script type="text/javascript">
+        function IFrameResize() {
+            //得到父页面的iframe框架的对象
+            var obj = parent.document.getElementById("mainFrame");
+            //把当前页面内容的高度动态赋给iframe框架的高
+            obj.height = this.document.body.scrollHeight;
+        }
+    </script>
+</head>
+
+<body οnlοad="IFrameResize();">
+    <div id="header">
+        我的相册
+    </div>
+    <hr>
+    <div id="content">
+        <div id="photo"></div>
+        <button id="upload" type="submit" onclick="">点击上传</button>
+    </div>
+</body>
+
+</html>

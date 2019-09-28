@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>择偶条件</title>
+    <link rel="stylesheet" type="text/css" href="../../css/criteria.css">
+    <link rel="stylesheet" type="text/css" href="../../css/edit_base.css">
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../js/base.js"></script>
+    <script type="text/javascript">
+        function IFrameResize() {
+            //得到父页面的iframe框架的对象
+            var obj = parent.document.getElementById("mainFrame");
+            //把当前页面内容的高度动态赋给iframe框架的高
+            obj.height = this.document.body.scrollHeight;
+        }
+    </script>
+</head>
+
+<body οnlοad="IFrameResize();">
+    <div id="header">
+        择偶条件
+    </div>
+    <hr>
+    <div id="content">
+        年 龄<input type="text" name="name" class="select_person"> 至
+        <input type="text" name="name" class="select_person">
+        <br/> 身 高<input type="text" name="name" class="select_person">至
+        <input type="text" name="name" class="select_person"><span> kg</span>
+        <br/> 月 薪<input type="text" name="name" class="select_person"> 至
+        <input type="text" name="name" class="select_person"><span> 元</span>
+        <br/> 学 历<select id="education" name="education">
+                    <option value="大学本科">大学本科</option>
+                    <option value="硕士及以上">硕士及以上</option>
+                    <option value="大学专科">大学专科</option>
+                    <option value="高中">高中</option>
+                    <option value="高中以下">高中以下</option>
+            </select>
+        <br/>工作地区<select id="province" runat="server" οnchange="selectprovince(this);" class="select_person"><option value="0" selected>请选择省份</option></select>
+        <select id="city" runat="server" class="select_person"><option value="" selected>请选择城市</option></select>
+    </div>
+    <button id="save" type="submit" onclick="">保存</button>
+
+</body>
+
+</html>

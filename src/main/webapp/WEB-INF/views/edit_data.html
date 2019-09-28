@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--在IE运行最新的渲染模式-->
+    <link rel="stylesheet" type="text/css" href="../css/edit_data.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/edit_data.js"></script>
+    <title>编辑资料</title>
+</head>
+
+<body>
+    <!--顶部菜单-->
+    <div id="header">
+        <p>维纳斯婚恋</p>
+        <ul>
+            <li><a href="">主页</a></li>
+            <li><a href="">搜索</a></li>
+            <li><a href="">会员</a></li>
+            <li><a href="">消息</a></li>
+            <li><a href="">关注</a></li>
+            <li class="edit_data"><a>编辑资料</a></li>
+        </ul>
+    </div>
+    <!--左侧菜单栏-->
+    <div id="left">
+        <input type="file" id="btn_file" style="display:none" onchange="showPicture(this)" />
+        <a href="javascript:;" title="更换头像" onclick="F_Open_dialog()">
+            <div id="touxiang"></div>
+        </a>
+        <div id="name">用户名</div>
+        <div id="left_menu">
+            <ul>
+                <li><a id="person_da0ta" href="edit_data_html/person_data" target="targetText">个人资料<img src="../img/menu.png"></a></li>
+                <li><a id="soliloquy" href="edit_data_html/soliloquy" target="targetText">内心独白<img src="../img/menu.png"></a></li>
+                <li><a id="criteria" href="edit_data_html/criteria.html" target="targetText">择偶条件<img src="../img/menu.png"></a></li>
+                <li><a href="edit_data_html/photo_album" target="targetText">我的相册<img src="../img/menu.png"></a></li>
+                <li><a href="edit_data_html/edit_password" target="targetText">修改密码<img src="../img/menu.png"></a></li>
+            </ul>
+        </div>
+    </div>
+    <iframe id="myframe" src="edit_data_html/person_data.html" name="targetText" scrolling="no"></iframe>
+</body>
+
+</html>

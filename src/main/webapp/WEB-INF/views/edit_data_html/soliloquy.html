@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>内心独白</title>
+<link rel="stylesheet" type="text/css" href="../../css/soliloquy.css">
+<link rel="stylesheet" type="text/css" href="../../css/edit_base.css">
+<script type="text/javascript">
+    function IFrameResize() {
+        //得到父页面的iframe框架的对象
+        var obj = parent.document.getElementById("mainFrame");
+        //把当前页面内容的高度动态赋给iframe框架的高
+        obj.height = this.document.body.scrollHeight;
+    }
+</script>
+</head>
+
+<body οnlοad="IFrameResize();">
+    <div id="header">
+        内心独白
+    </div>
+    <hr>
+    <div id="content">
+        介绍一下自己，描述一下理想的伴侣，说说你对婚姻的期望
+        <br/>
+        <textarea id="introduce" name="message" rows="15" cols="80">
+  说出你的故事......
+        </textarea>
+        <br/> <br/>小提示：
+        <p>1.为了遵守国家法规，保障用户个人信息安全，内心独白中请勿出<br/>现QQ、微信、微博、电话号码等联系方式以及网址、广告、色情、诋<br/>毁或其他不健康的内容。
+        </p>
+        <p>2.若文字中出现不符合标准的内容，我们将予以删除，请认真填写。</p>
+        <button id="save" type="submit" onclick="">保存</button>
+    </div>
+
+
+</body>
+
+</html>

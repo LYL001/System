@@ -1,0 +1,36 @@
+#content .sex {
+    height: 15px;
+    width: 15px;
+    margin-left: 4%;
+}
+
+#content select {
+    height: 30px;
+    margin-top: 40px;
+    width: 15%;
+    text-align: center;
+    background-color: #C9C3D8;
+    margin-left: 1%;
+}
+
+#content input {
+    height: 30px;
+    margin-top: 40px;
+    width: 30%;
+    text-align: center;
+    background-color: #C9C3D8;
+    margin-left: 1%;
+}
+
+
+/*保存按钮的样式*/
+
+#save {
+    height: 50px;
+    width: 150px;
+    background-color: #32A5F1;
+    color: white;
+    margin-left: 50%;
+    border-radius: 15px;
+    outline: none;
+}

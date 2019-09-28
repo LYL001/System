@@ -1,0 +1,19 @@
+#content select {
+    height: 30px;
+    margin-top: 40px;
+    width: 15%;
+    text-align: center;
+    background-color: #C9C3D8;
+    margin-left: 1%;
+}
+
+#save {
+    height: 50px;
+    width: 150px;
+    background-color: #32A5F1;
+    color: white;
+    margin-top: 80px;
+    margin-left: 50%;
+    border-radius: 15px;
+    outline: none;
+}

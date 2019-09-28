@@ -1,0 +1,163 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+.top {
+    height: 100px;
+    border: 2px solid #CECBC8;
+}
+
+.top img {
+    width: 100%;
+    height: 100%;
+}
+
+#middle {
+    width: 100%;
+}
+
+.left {
+    margin-top: 50px;
+    width: 45%;
+    float: left;
+    padding-left: 4%;
+    height: 350px;
+    text-align: center;
+    border-right: 1px solid black
+}
+
+.right {
+    margin-top: 55px;
+    width: 45%;
+    float: left;
+    padding-left: 5%;
+    height: 345px;
+}
+
+input {
+    height: 40px;
+    width: 350px;
+}
+
+#identify_code {
+    width: 230px;
+}
+
+#code_1 {
+    font-size: 15px;
+}
+
+#code_2 {
+    padding: 8px;
+    border: 2px solid #B8B3B3;
+    width: 50px;
+    height: 40px;
+}
+
+.bottom {
+    width: 100%;
+}
+
+#login {
+    height: 50px;
+    width: 150px;
+    background-color: gray;
+    color: white;
+    margin-left: 10%;
+    border-radius: 15px;
+    outline: none;
+}
+
+#desiger {
+    height: 50px;
+    width: 150px;
+    background-color: #32A5F1;
+    color: white;
+    margin-left: 10%;
+    border-radius: 15px;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#middle_desiger {
+    height: 400px;
+    display: none;
+    float: left;
+    padding-left: 33%;
+    width: 40%;
+}
+
+#desiger_span {
+    font-size: 30px;
+    float: left;
+    padding-left: 37%;
+}
+
+#phone_code {
+    height: 40px;
+    width: 200px;
+}
+
+#phone_code1 {
+    height: 47px;
+    width: 150px;
+    background-color: #32A5F1;
+    color: white;
+    border-radius: 5px;
+}
+
+#phone_code_2 {
+    padding-left: 13%;
+}
+
+#login_1 {
+    height: 50px;
+    width: 170px;
+    background-color: #32A5F1;
+    color: white;
+    margin-left: 12%;
+    border-radius: 15px;
+    outline: none;
+}
+
+#desiger_1 {
+    height: 50px;
+    width: 170px;
+    background-color: gray;
+    color: white;
+    margin-left: 11px;
+    border-radius: 15px;
+    outline: none;
+}
+
+#xieyi {
+    font-size: 14px;
+    padding-left: 13%;
+}
+
+#xieyi input {
+    height: 12px;
+    width: 12px;
+}
+
+.bottom_left {
+    width: 30%;
+    float: left;
+    padding-left: 15%;
+    height: 100px;
+    padding-top: 50px;
+}
+
+.bottom_right {
+    width: 30%;
+    float: left;
+    padding-left: 15%;
+    height: 100px;
+    padding-top: 50px;
+}

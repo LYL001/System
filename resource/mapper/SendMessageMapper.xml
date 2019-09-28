@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group5.dao.SendMessageMapper">
+  <resultMap id="BaseResultMap" type="com.group5.entity.SendMessage">
+    <id column="SendM_Id" jdbcType="INTEGER" property="sendmId" />
+    <result column="Send_time" jdbcType="VARCHAR" property="sendTime" />
+    <result column="User_id" jdbcType="INTEGER" property="userId" />
+    <result column="acceptU_id" jdbcType="INTEGER" property="acceptuId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.group5.entity.SendMessage">
+    <result column="Context" jdbcType="LONGVARCHAR" property="context" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    SendM_Id, Send_time, User_id, acceptU_id
+  </sql>
+  <sql id="Blob_Column_List">
+    Context
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.group5.entity.SendMessageExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from send_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.group5.entity.SendMessageExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from send_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from send_message
+    where SendM_Id = #{sendmId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from send_message
+    where SendM_Id = #{sendmId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.group5.entity.SendMessageExample">
+    delete from send_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.group5.entity.SendMessage">
+    insert into send_message (SendM_Id, Send_time, User_id, 
+      acceptU_id, Context)
+    values (#{sendmId,jdbcType=INTEGER}, #{sendTime,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+      #{acceptuId,jdbcType=INTEGER}, #{context,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.group5.entity.SendMessage">
+    insert into send_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sendmId != null">
+        SendM_Id,
+      </if>
+      <if test="sendTime != null">
+        Send_time,
+      </if>
+      <if test="userId != null">
+        User_id,
+      </if>
+      <if test="acceptuId != null">
+        acceptU_id,
+      </if>
+      <if test="context != null">
+        Context,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sendmId != null">
+        #{sendmId,jdbcType=INTEGER},
+      </if>
+      <if test="sendTime != null">
+        #{sendTime,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="acceptuId != null">
+        #{acceptuId,jdbcType=INTEGER},
+      </if>
+      <if test="context != null">
+        #{context,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.group5.entity.SendMessageExample" resultType="java.lang.Long">
+    select count(*) from send_message
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update send_message
+    <set>
+      <if test="record.sendmId != null">
+        SendM_Id = #{record.sendmId,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendTime != null">
+        Send_time = #{record.sendTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        User_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.acceptuId != null">
+        acceptU_id = #{record.acceptuId,jdbcType=INTEGER},
+      </if>
+      <if test="record.context != null">
+        Context = #{record.context,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update send_message
+    set SendM_Id = #{record.sendmId,jdbcType=INTEGER},
+      Send_time = #{record.sendTime,jdbcType=VARCHAR},
+      User_id = #{record.userId,jdbcType=INTEGER},
+      acceptU_id = #{record.acceptuId,jdbcType=INTEGER},
+      Context = #{record.context,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update send_message
+    set SendM_Id = #{record.sendmId,jdbcType=INTEGER},
+      Send_time = #{record.sendTime,jdbcType=VARCHAR},
+      User_id = #{record.userId,jdbcType=INTEGER},
+      acceptU_id = #{record.acceptuId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.group5.entity.SendMessage">
+    update send_message
+    <set>
+      <if test="sendTime != null">
+        Send_time = #{sendTime,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        User_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="acceptuId != null">
+        acceptU_id = #{acceptuId,jdbcType=INTEGER},
+      </if>
+      <if test="context != null">
+        Context = #{context,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where SendM_Id = #{sendmId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.group5.entity.SendMessage">
+    update send_message
+    set Send_time = #{sendTime,jdbcType=VARCHAR},
+      User_id = #{userId,jdbcType=INTEGER},
+      acceptU_id = #{acceptuId,jdbcType=INTEGER},
+      Context = #{context,jdbcType=LONGVARCHAR}
+    where SendM_Id = #{sendmId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.group5.entity.SendMessage">
+    update send_message
+    set Send_time = #{sendTime,jdbcType=VARCHAR},
+      User_id = #{userId,jdbcType=INTEGER},
+      acceptU_id = #{acceptuId,jdbcType=INTEGER}
+    where SendM_Id = #{sendmId,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>

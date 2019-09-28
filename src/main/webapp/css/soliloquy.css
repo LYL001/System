@@ -1,0 +1,15 @@
+#introduce {
+    background-color: #C9C3D8;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#save {
+    height: 50px;
+    width: 150px;
+    background-color: #32A5F1;
+    color: white;
+    margin-left: 50%;
+    border-radius: 15px;
+    outline: none;
+}
