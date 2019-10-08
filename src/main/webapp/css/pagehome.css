@@ -1,0 +1,195 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*主页导航字体的样式*/
+
+#pagehome {
+    font-family: Georgia;
+    font-size: 20px;
+}
+
+#content {
+    float: left;
+    margin-left: 15%;
+    margin-top: 40px;
+    width: 70%;
+}
+
+
+/*中间上面部分的div样式*/
+
+#con_top {
+    background-color: #EBEBF3;
+    height: 80px;
+    line-height: 80px;
+}
+
+#vip {
+    float: right;
+    margin-right: 3%;
+    text-decoration: none;
+    color: black;
+}
+
+#con_top span {
+    margin-left: 4%;
+    font-size: 35px;
+}
+
+#con_top span a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*中间左边部分的div样式*/
+
+#con_left {
+    float: left;
+    width: 70%;
+}
+
+
+/*中间左边部分上面的导航栏样式*/
+
+#con_left_top {
+    border: 1px solid #B7B7BB;
+    padding-top: 20px;
+    height: 100px;
+    margin-top: 40px;
+}
+
+#myfocus {
+    float: left;
+    width: 33%;
+    height: 60px;
+    border-right: 1px solid #B7B7BB;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#new_message {
+    float: left;
+    width: 33%;
+    height: 60px;
+    border-right: 1px solid #B7B7BB;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#my_fan {
+    float: left;
+    width: 33%;
+    height: 60px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+/*图片的样式*/
+
+#picture {
+    float: left;
+    margin-top: -20px;
+    margin-left: 40%;
+    min-width: 50px;
+    height: 50px;
+    background-size: cover;
+    display: block;
+    border-radius: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.picture1 {
+    background: url(../img/touxiang.jpg) no-repeat;
+}
+
+.picture2 {
+    background: url(../img/email.jpg) no-repeat;
+}
+
+.picture3 {
+    background: url(../img/touxiang.jpg) no-repeat;
+}
+
+
+/*今日推荐的样式*/
+
+#con_left_middle {
+    margin-top: 30px;
+}
+
+#conditions {
+    margin-left: 5%;
+}
+
+#edit_con {
+    float: right;
+    margin-right: 5%;
+}
+
+#con_left_bottom {
+    margin-top: 30px;
+    border: 1px solid #B7B7BB;
+    height: 500px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 200px;
+}
+
+
+/*个人资料部分的div样式*/
+
+#con_right {
+    float: right;
+    width: 20%;
+}
+
+#con_right_top {
+    margin-top: 40px;
+    height: 170px;
+    border: 1px solid #B7B7BB;
+}
+
+#touxiang {
+    float: left;
+    margin-left: 30%;
+    min-width: 80px;
+    height: 80px;
+    background: url('../img/touxiang.jpg') no-repeat;
+    background-size: cover;
+    display: block;
+    border-radius: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+#information {
+    margin-top: 84px;
+    margin-left: 5%;
+    font-size: 15px;
+}
+
+#con_right_bottom {
+    margin-top: 40px;
+    height: 400px;
+    border: 1px solid #B7B7BB;
+}
+
+#con_right_bottom span {
+    margin-left: 5%;
+}
+
+#change {
+    float: right;
+    margin-right: 5%;
+}
+
+#membership1 {
+    text-align: center;
+    padding-top: 50px;
+}

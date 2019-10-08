@@ -134,6 +134,7 @@ function(){
 						if(flag=='repeat'){
 							alert('用户名重复，注册失败')
 						}
+
 						else if(flag=='false'){
 							alert('系统内部错误，注册失败')
 						}
@@ -150,8 +151,14 @@ function(){
 					dataType: "json",
 					type: "post",
 					async: true,
+					data: {mail: $('input[name="mail"]').val()},
+					success:function (data) {
+						if(data['data']['flag']=='repeat'){
+							alert('邮箱已被注册')
+						}
 
-					data: {mail: $('input[name="mail"]').val()}
+					}
+
 				}
 
 

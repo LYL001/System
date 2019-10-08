@@ -117,7 +117,8 @@ $(function () {
         async: true,
         success:function (data) {
             $('input[name="name"]').val(data['data']['user']['username'])
-            $('input[name="mail"]').val(data['data']['user']['username'])
+            $('#mail').html(data['data']['user']['mail'])
+
         }
     })
 

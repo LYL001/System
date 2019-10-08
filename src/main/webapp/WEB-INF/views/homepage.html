@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--在IE运行最新的渲染模式-->
+    <link rel="stylesheet" type="text/css" href="../../css/pagehome.css">
+    <link rel="stylesheet" type="text/css" href="../../css/header_base.css">
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+
+    <script src="../../js/homepage.js"></script>
+    <title>维纳斯</title>
+</head>
+
+<body>
+    <!--顶部菜单-->
+    <div id="header">
+        <p>维纳斯婚恋</p>
+        <ul>
+            <li id="pagehome"><a href="">主页</a></li>
+            <li><a href="">搜索</a></li>
+            <li><a href="">会员</a></li>
+            <li><a href="">消息</a></li>
+            <li><a href="">关注</a></li>
+            <li><a href="edit">编辑资料</a></li>
+        </ul>
+        <button id="loginout" type="submit" onclick="">退出登录</button>
+    </div>
+    <!--中间内容-->
+    <div id="content">
+        <div id="con_top">
+            <span><a href="">开通会员</a></span>
+            <span><a href="">优享特权</a></span>
+        </div>
+        <div id="con_left">
+            <div id="con_left_top">
+                <div id="myfocus">
+                    <a href="">
+                        <div id="picture1" class="picture1"></div><br/><br/>
+                        <span>我的关注</span>
+                    </a>
+                </div>
+
+                <div id="new_message">
+                    <a href="">
+                        <div id="picture2" class="picture2"></div>
+                        <br/><br/>
+                        <span>新的消息</span>
+                    </a>
+                </div>
+
+                <div id="my_fan">
+                    <a href="">
+                        <div id="picture" class="picture3"></div><br/><br/>
+                        <span>我的粉丝</span>
+                    </a>
+                </div>
+            </div>
+            <div id="con_left_middle">
+                <span id="today">今日推荐</span>
+                <span id="conditions">四川成都|18到30岁的博士</span>
+                <span id="edit_con">修改择偶条件</span>
+            </div>
+            <div id="con_left_bottom">
+                <span>开通会员，获取每日推荐</span>
+            </div>
+        </div>
+        <div id="con_right">
+            <div id="con_right_top">
+                <input type="file" id="btn_file" style="display:none" onchange="showPicture(this)" />
+                <a href="javascript:;" title="更换头像" onclick="">
+                    <div id="touxiang"></div>
+                </a>
+
+                <div id="information">
+                    <span id="name"> </span><br/>
+
+                    <span id="membership">未开通会员</span><br/>
+
+                    <a href="">完善资料</a>
+
+                </div>
+            </div>
+            <div id="con_right_bottom">
+                <span id="like">猜你喜欢</span>
+                    <a id="change">换一批</a>
+                    <div id="membership1">
+                        <span>开通会员，获取每日推荐</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>

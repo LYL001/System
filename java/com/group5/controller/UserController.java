@@ -89,10 +89,13 @@ public class UserController {
         System.out.println(this.code);
         if(!this.code.equals(type_code)){
             message.add("flag","unverified");
+            return message;
         }
         if(userService.usernameOnly(username)){
             message.add("flag","repeat");
+            return message;
         }
+
 
         User user=new User();
         user.setUsername(username);
@@ -112,7 +115,13 @@ public class UserController {
     }
 
     @RequestMapping("code.do")
-    public void code_do(String mail){
+    @ResponseBody
+    public Msg code_do(String mail){
+        Msg message=new Msg();
+        if(userService.mailOnly(mail)){
+            message.add("flag","repeat");
+            return message;
+        }
         this.code=CreateSalt.crate();
         String title="维纳斯婚恋网";
         String str="欢迎注册维纳斯婚恋网，你本次的验证码是:"+code;
@@ -121,6 +130,7 @@ public class UserController {
         } catch (Exception e) {
 
         }
+        return message;
     }
 
     @RequestMapping("/homeinfo")
