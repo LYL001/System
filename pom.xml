@@ -52,6 +52,7 @@
   </build>
   <dependencies>
 
+
     <dependency>
       <groupId>javax.mail</groupId>
       <artifactId>mail</artifactId>

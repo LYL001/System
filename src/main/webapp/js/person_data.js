@@ -1,4 +1,6 @@
 $(window).on('load', function() {
+
+
     //生日的下拉选择实现
     $(function() {
         // 初始化（带默认值）
@@ -107,3 +109,16 @@ $(window).on('load', function() {
         });
     })(jQuery);
 });
+$(function () {
+    $.ajax("../information",{
+
+        dataType: "json",
+        type: "post",
+        async: true,
+        success:function (data) {
+            $('input[name="name"]').val(data['data']['user']['username'])
+            $('input[name="mail"]').val(data['data']['user']['username'])
+        }
+    })
+
+})

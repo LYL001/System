@@ -1,5 +1,9 @@
+import com.group5.dao.AuthorityMapper;
 import com.group5.dao.ChinaMapper;
+import com.group5.dao.UserinfoMapper;
+import com.group5.entity.Authority;
 import com.group5.entity.China;
+import com.group5.entity.Userinfo;
 import com.group5.util.Config;
 import com.group5.util.CreateSalt;
 import com.group5.util.HttpUtil;
@@ -42,14 +46,24 @@ import java.util.List;
 public class Generator {
 
     @Autowired
-    private ChinaMapper chinaMapper;
+    private AuthorityMapper authorityMapper;
+    @Autowired
+    private UserinfoMapper userinfoMapper;
+
+    static int code;
+    @Test
+    public void aa(){
+        code=11111;
+    }
 
     @Test
-    public void login() throws IOException {
-
-        String random=new SecureRandomNumberGenerator().nextBytes().toHex();
-        String result = new Md5Hash("12345",random,3).toString();
-        System.out.println(result+","+random);
+    public void login()  {
+        //List <String> list=authorityMapper.selectByUsername("tt");
+       // Userinfo userinfo=userinfoMapper.selectByUsername("11");
+    /*for(String authority:list){
+        System.out.println(authority);
+    }*/
+        System.out.println(this.code);
 
     }
 }

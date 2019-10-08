@@ -5,6 +5,8 @@ public class Photos {
 
     private String url;
 
+    private Integer userId;
+
     public Integer getId() {
         return id;
     }
@@ -19,5 +21,13 @@ public class Photos {
 
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

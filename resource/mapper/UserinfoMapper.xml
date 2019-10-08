@@ -318,6 +318,11 @@
       EDU_id = #{eduId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
+  <select id="selectByUsername" parameterType="java.lang.String" resultType="com.group5.entity.Userinfo">
+    SELECT i.*
+    FROM userinfo i
+     INNER JOIN user u on i.id=u.id
+     WHERE u.username=#{username,jdbcType=VARCHAR}
+</select>
 
 </mapper>

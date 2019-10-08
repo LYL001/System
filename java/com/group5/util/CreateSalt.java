@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CreateSalt {
     public static String crate(){
-        String str="abcdefghijklmnopqrstuvwxyz0123456789";
+        String str="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         Random random=new Random();
         StringBuffer sb=new StringBuffer();
         for(int i=0;i<5;i++){

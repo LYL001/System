@@ -16,7 +16,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="mapper/ChinaMapper.xml"/>
+        <mapper resource="mapper/AuthorityMapper.xml"/>
     </mappers>
 
 

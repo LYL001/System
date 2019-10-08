@@ -293,6 +293,76 @@ public class AuthorityExample {
             addCriterion("Authority_name not between", value1, value2, "authorityName");
             return (Criteria) this;
         }
+
+        public Criteria andRealmNameIsNull() {
+            addCriterion("Realm_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameIsNotNull() {
+            addCriterion("Realm_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameEqualTo(String value) {
+            addCriterion("Realm_name =", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameNotEqualTo(String value) {
+            addCriterion("Realm_name <>", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameGreaterThan(String value) {
+            addCriterion("Realm_name >", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameGreaterThanOrEqualTo(String value) {
+            addCriterion("Realm_name >=", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameLessThan(String value) {
+            addCriterion("Realm_name <", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameLessThanOrEqualTo(String value) {
+            addCriterion("Realm_name <=", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameLike(String value) {
+            addCriterion("Realm_name like", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameNotLike(String value) {
+            addCriterion("Realm_name not like", value, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameIn(List<String> values) {
+            addCriterion("Realm_name in", values, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameNotIn(List<String> values) {
+            addCriterion("Realm_name not in", values, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameBetween(String value1, String value2) {
+            addCriterion("Realm_name between", value1, value2, "realmName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRealmNameNotBetween(String value1, String value2) {
+            addCriterion("Realm_name not between", value1, value2, "realmName");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -19,7 +19,8 @@
     <property name="filterChainDefinitions">
       <value>
         /login=anon
-        /di=anon
+        /userpage=perms[user:log]
+        /edit=perms[user:page]
       </value>
     </property>
 

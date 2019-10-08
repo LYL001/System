@@ -44,18 +44,20 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table tableName="accept_message"></table>
+        <table tableName="authority"></table>
+        <table tableName="VIP_timelist"></table>
+        <!--<table tableName="accept_message"></table>
         <table tableName="admin"></table>
         <table tableName="choice"></table>
         <table tableName="edu"></table>
         <table tableName="fan"></table>
-        <table tableName="follow"></table>
-        <table tableName="photos"></table>
-        <table tableName="send_message"></table>
+        <table tableName="follow"></table>-->
+       <!-- <table tableName="photos"></table>-->
+        <!--<table tableName="send_message"></table>
         <table tableName="user"></table>
         <table tableName="userinfo"></table>
         <table tableName="authority"></table>
-        <table tableName="china"></table>
+        <table tableName="china"></table>-->
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />

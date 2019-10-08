@@ -26,6 +26,15 @@ function(){
 
 		$('#desiger_1').css({'background-color':'#32A5F1'});
 	};
+	if ($('input[name="mail"]').val() == "") {
+		$('#phone_code1').attr('disabled', true)
+
+		$('#phone_code1').css({'background-color':'gray'})
+	}else{
+		$('#phone_code1').attr('disabled', false)
+
+		$('#phone_code1').css({'background-color':'#32A5F1'});
+	};
 
 	$("#desiger").click(function(){
 		
@@ -75,18 +84,29 @@ function(){
 					password:$('input[name="password"]').val()
 				},
 				success:function (data) {
-					alert('1111111')
 					var flag=data['data']['flag']
 					if(flag=='true'){
-						alert('成功')
+						var permission=data['data']['permission']
+						if(permission=='Admin:log'){
+							$(location).attr('href','login')
+						}
+						if(permission=='user:log'){
+							$(location).attr('href','userpage')
+						}
+						if(permission=='VIP:log'){
+							$(location).attr('href','login')
+						}
 					}else if(flag=='false'){
-						alert('用户名或密码错误')
+
+						$(location).attr('href','login')
+					}else if(flag=='already'){
+						alert('当前账号已登录')
 						$(location).attr('href','login')
 					}
 
 				},
 				error:function () {
-					alert(2)
+
 				}
 
 			}
@@ -94,7 +114,7 @@ function(){
 	}),
 
 		$('#desiger_1').click(function () {
-			alert(11111)
+
 			$.ajax("reg.do",
 				{
 					dataType: "json",
@@ -103,11 +123,41 @@ function(){
 
 					data:{username:$('input[name="name1"]').val(),
 						password:$('input[name="password1"]').val(),
-					mail:$('input[name="mail"]').val()}
+					    mail:$('input[name="mail"]').val(),
+						type_code:$('#phone_code').val()},
+
+					success:function (data) {
+						var flag=data['data']['flag']
+						if(flag=='true'){
+							$(location).attr('href','login')
+						}
+						if(flag=='repeat'){
+							alert('用户名重复，注册失败')
+						}
+						else if(flag=='false'){
+							alert('系统内部错误，注册失败')
+						}
+						else if(flag='unverified'){
+							alert('邮箱验证码错误')
+						}
+					}
 				})
 				}
+			),
+		$('#phone_code1').click(function () {
+			$.ajax("code.do",
+				{
+					dataType: "json",
+					type: "post",
+					async: true,
 
-			)
+					data: {mail: $('input[name="mail"]').val()}
+				}
+
+
+
+				)
+		})
 
 
 }
@@ -138,5 +188,19 @@ function(){
 
 		$('#desiger_1').css({'background-color':'gray'});
 	};
+	if (
+		$('input[name="mail"]').val() != ""
+	) {
+		$('#phone_code1').attr('disabled', false)
+
+
+		$('#phone_code1').css({'background-color':'#32A5F1'});
+	}else{
+
+		$('#phone_code1').attr('disabled', true)
+
+		$('#phone_code1').css({'background-color':'gray'});
+
+	}
 })
 

@@ -23,9 +23,14 @@
         我的相册
     </div>
     <hr>
+
     <div id="content">
+
         <div id="photo"></div>
-        <button id="upload" type="submit" onclick="">点击上传</button>
+        <form action="/save_photos" method="post" enctype="multipart/form-data">
+            <input type="file"  name="upload"/><br/>
+            <button id="upload" type="submit" onclick="">点击上传</button>
+        </form>
     </div>
 </body>
 

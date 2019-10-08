@@ -26,7 +26,10 @@
     </div>
     <!--左侧菜单栏-->
     <div id="left">
-        <input type="file" id="btn_file" style="display:none" onchange="showPicture(this)" />
+        <form action="/save_head" method="post" enctype="multipart/form-data">
+            <input type="file" name="upload"/>
+            <input type="submit" value="提交">
+        </form>
         <a href="javascript:;" title="更换头像" onclick="F_Open_dialog()">
             <div id="touxiang"></div>
         </a>

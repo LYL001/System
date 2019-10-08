@@ -27,4 +27,6 @@ public interface AuthorityMapper {
     int updateByPrimaryKeySelective(Authority record);
 
     int updateByPrimaryKey(Authority record);
+
+   List<String> selectByUsername(String username);
 }

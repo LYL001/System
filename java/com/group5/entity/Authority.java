@@ -7,6 +7,28 @@ public class Authority {
 
     private String authorityName;
 
+    private String realmName;
+
+    private String username;
+
+    private Integer authority;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Integer getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Integer authority) {
+        this.authority = authority;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +51,13 @@ public class Authority {
 
     public void setAuthorityName(String authorityName) {
         this.authorityName = authorityName == null ? null : authorityName.trim();
+    }
+
+    public String getRealmName() {
+        return realmName;
+    }
+
+    public void setRealmName(String realmName) {
+        this.realmName = realmName == null ? null : realmName.trim();
     }
 }
