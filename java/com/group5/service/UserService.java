@@ -24,6 +24,7 @@ public interface UserService {
      List<User> selectUserByMail(String mail);
      boolean mailOnly(String mail);
      boolean updatePass(String newpassword,String mail);
+     boolean updateUser(User newUser,String oldUSername);
 
 
 }

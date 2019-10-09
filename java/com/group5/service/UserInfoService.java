@@ -9,4 +9,5 @@ public interface UserInfoService {
     User getUser(String username);
     boolean changeInfo(Userinfo userinfo);
     boolean upLoadHead(MultipartFile upload);
+    boolean updateUserinfo(Integer userId,Userinfo userinfo);
 }

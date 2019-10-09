@@ -51,4 +51,17 @@ public class UserInfoServiceImpl implements UserInfoService {
         upLoad.upLoadFile(upload);
         return true;
     }
+
+    @Override
+    public boolean updateUserinfo(Integer userId, Userinfo userinfo) {
+        UserinfoExample example=new UserinfoExample();
+        UserinfoExample.Criteria criteria=example.createCriteria();
+        criteria.andIdEqualTo(userId);
+        if(userinfoMapper.updateByExampleSelective(userinfo,example)>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

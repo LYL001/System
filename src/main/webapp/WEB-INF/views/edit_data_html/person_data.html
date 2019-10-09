@@ -28,15 +28,15 @@
     </div>
     <hr>
     <div id="content">
-        用户名<input type="text" name="name">
+        用户名<span  id="name" ></span>
         <br/> 邮 箱 <span  id="mail" ></span>
         <br> 性 别
-        <input class="sex" type="radio" name="sex" value="male" checked>男
+        <input id="male" class="sex" type="radio" name="sex" value="male" checked>男
 
-        <input class="sex" type="radio" name="sex" value="female">女
-        <br/> 生 日 <select class="sel_year" rel="2000"></select><span>年</span>
-        <select class="sel_month" rel="10"></select><span>月</span>
-        <select class="sel_day" rel="26"></select><span>日</span>
+        <input id="female" class="sex" type="radio" name="sex" value="female">女
+        <br/> 生 日 <select class="sel_year" id="year" rel="2000"></select><span>年</span>
+        <select class="sel_month" id="month" rel="10"></select><span>月</span>
+        <select class="sel_day" id="date" rel="26"></select><span>日</span>
         <br/>学 历
         <select id="education" name="education">
                 <option value="大学本科">大学本科</option>
@@ -48,9 +48,8 @@
         <br/>工作地区<select id="province" runat="server" οnchange="selectprovince(this);" class="select_person"><option value="0" selected>请选择省份</option></select>
         <select id="city" runat="server" class="select_person"><option value="" selected>请选择城市</option></select>
         <br/>身高体重<input class="select_person" type="text" name="height" value="161"><span>cm</span><input class="select_person" type="text" name="weight" value="40"><span>kg</span>
-        <br/>月 薪<input type="text" name="salary" value="3000-5000"><span>元</span>
+        <br/>月 薪<input type="text" name="salary" value="5000"><span>元</span>
         <button id="save" type="submit" onclick="">保存</button>
-
     </div>
 
 </body>

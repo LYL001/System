@@ -212,7 +212,17 @@ public class UserServiceImpl implements UserService {
         }else{
             return false;
         }
+    }
 
-
+    @Override
+    public boolean updateUser(User newUser, String oldUSername) {
+      UserExample userExample=new UserExample();
+      UserExample.Criteria criteria=userExample.createCriteria();
+      criteria.andUsernameEqualTo(oldUSername);
+      if(userMapper.updateByExampleSelective(newUser,userExample)>0){
+          return true;
+      }else{
+          return false;
+      }
     }
 }

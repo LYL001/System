@@ -116,10 +116,99 @@ $(function () {
         type: "post",
         async: true,
         success:function (data) {
-            $('input[name="name"]').val(data['data']['user']['username'])
+            $('#name').html(data['data']['user']['username'])
             $('#mail').html(data['data']['user']['mail'])
-
+            var gender=data['data']['info']['gender']
+            if(gender==1){
+                $("#male").attr("checked",true)
+                $("#female").attr("checked",false)
+            }else{
+                $("#female").attr("checked",true)
+                $("#male").attr("checked",false)
+            }
+            var birthday=data['data']['info']['birthday']
+            var list1=birthday.split('年')
+            var year=list1[0]
+            var list2=list1[1].split('月')
+            var month=list2[0]
+            var date=list2[1].split('日')[0]
+            $('#year').val(year)
+            $('#month').val(month)
+            $('#date').val(date)
+            $('#education').val(data['data']['edu']['qualification'])
+            var location=data['data']['info']['situation']
+            var province
+            var city
+            if(location.indexOf('省')>=0) {
+                 province = location.split('省')[0] + '省'
+                 city=location.split('省')[1]
+            }
+            else if(location.indexOf('区')>=0) {
+                 province = location.split('区')[0] + '区'
+                 city=location.split('区')[1]
+            }
+            else{
+                province=location.split('市')[0]+'市'
+                city=location.split('市')[1]+'市'
+            }
+            $('#province').val(province)
+            $('#city').val(city)
+            $('input[name="height"]').val(data['data']['info']['height'])
+            $('input[name="weight"]').val(data['data']['info']['weight'])
+            $('input[name="salary"]').val(data['data']['info']['salary'])
         }
+    }),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('#save').click(function () {
+    $.ajax("../updateinfo",{
+
+        dataType: "json",
+        type: "post",
+        async: true,
+        contentType:"application/json",
+        data:JSON.stringify({
+            username:$("#name").html(),
+            gender:$(".sex").val(),
+            year: $('#year').val(),
+            month:$('#month').val(),
+            date:$('#date').val(),
+            education:$('#education').val(),
+            province:$('#province').val(),
+            city:$('#city').val(),
+            height:$('input[name="height"]').val(),
+            weight:$('input[name="weight"]').val(),
+            salary:$('input[name="salary"]').val()
+        }
+        )
     })
+
+})
+
 
 })
