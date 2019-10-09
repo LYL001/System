@@ -4,6 +4,7 @@ import com.group5.dao.UserMapper;
 import com.group5.dao.UserinfoMapper;
 import com.group5.entity.*;
 import com.group5.service.UserInfoService;
+import com.group5.util.Old;
 import com.group5.util.UpLoad;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -56,12 +57,39 @@ public class UserInfoServiceImpl implements UserInfoService {
     public boolean updateUserinfo(Integer userId, Userinfo userinfo) {
         UserinfoExample example=new UserinfoExample();
         UserinfoExample.Criteria criteria=example.createCriteria();
+
         criteria.andIdEqualTo(userId);
-        if(userinfoMapper.updateByExampleSelective(userinfo,example)>0){
+        userinfo.setId(userId);
+        System.out.println(userinfoMapper.updateByPrimaryKeySelective(userinfo));
+        if(userinfoMapper.updateByPrimaryKeySelective(userinfo)>0){
             return true;
         }
         else {
             return false;
         }
+    }
+
+    @Override
+    public boolean updateEveryOneAge() {
+        List<Userinfo> list=userinfoMapper.selectAll();
+        for(Userinfo userinfo:list){
+            if(userinfo.getBirthday()!=null){
+                Integer age= Old.getYearsOld(userinfo.getBirthday());
+                userinfo.setAge(age);
+                if(this.updateUserinfo(userinfo.getId(),userinfo)){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            return true;
+        }
+        return true;
+    }
+
+    @Override
+    public void updateIntro(Userinfo userinfo) {
+        userinfoMapper.updateByPrimaryKey(userinfo);
     }
 }

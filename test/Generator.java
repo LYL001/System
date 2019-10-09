@@ -63,7 +63,7 @@ public class Generator {
     /*for(String authority:list){
         System.out.println(authority);
     }*/
-        System.out.println(this.code);
+        System.out.println("年");
 
     }
 }

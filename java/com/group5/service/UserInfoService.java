@@ -10,4 +10,6 @@ public interface UserInfoService {
     boolean changeInfo(Userinfo userinfo);
     boolean upLoadHead(MultipartFile upload);
     boolean updateUserinfo(Integer userId,Userinfo userinfo);
+    boolean updateEveryOneAge();
+    void updateIntro(Userinfo userinfo);
 }

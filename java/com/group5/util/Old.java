@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class Old {
     public  static Integer getYearsOld(String birthday) {
-        String str1[] = birthday.trim().split("年");
-        int year = Integer.parseInt(str1[0]);
-        String str2[] = str1[1].trim().split("月");
-        int month = Integer.parseInt(str2[0]);
-        String str3[] = str2[1].trim().split("日");
-        int date = Integer.parseInt(str3[0]);
+        String str[] = birthday.trim().split("-");
+        int year = Integer.parseInt(str[0]);
+
+        int month = Integer.parseInt(str[1]);
+
+        int date = Integer.parseInt(str[2]);
         Calendar calendar = Calendar.getInstance();
         int yearNow = calendar.get(Calendar.YEAR);
         int monthNow = calendar.get(Calendar.MONTH) + 1;

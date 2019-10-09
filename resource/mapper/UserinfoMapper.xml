@@ -324,5 +324,8 @@
      INNER JOIN user u on i.id=u.id
      WHERE u.username=#{username,jdbcType=VARCHAR}
 </select>
+  <select id="selectAll" resultType="com.group5.entity.Userinfo">
+    SELECT * FROM userinfo
+  </select>
 
 </mapper>

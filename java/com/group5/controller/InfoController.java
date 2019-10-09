@@ -79,20 +79,24 @@ public class InfoController {
     public Msg updateinfo(@RequestBody JSONObject data){
         Msg message=new Msg();
         Userinfo userinfo=new Userinfo();
+        System.out.println((String)data.get("username"));
         User user=userService.findByUserName((String)data.get("username"));
+
         userinfo.setId(user.getId());
         Userinfo newUserinfo=new Userinfo();
         if(data.get("gender")!=null){
             if(((String)data.get("gender")).equals("male")){
-                newUserinfo.setGender(1);
+                userinfo.setGender(1);
             }else{
-                newUserinfo.setGender(2);
+                userinfo.setGender(2);
             }
         }
         if(data.get("year")!=null&&data.get("month")!=null&&data.get("date")!=null) {
-            String birthday = (String) data.get("year") + '年' + (String) data.get("month") + '月' +
-                    (String) data.get("date") + '日';
-            newUserinfo.setBirthday(birthday);
+            String birthday = (String) data.get("year") + "-" + (String) data.get("month") + "-" +
+                    (String) data.get("date");
+
+            System.out.println(birthday);
+            userinfo.setBirthday(birthday);
             Integer age = Old.getYearsOld(birthday);
             userinfo.setAge(age);
         }
@@ -122,7 +126,18 @@ public class InfoController {
         else{
                 message.add("flag","false");
             }
-        
+
         return message;
+    }
+    @RequestMapping("/updateIntro")
+
+    public void updateIntro(Userinfo userinfo){
+
+        Subject currentUser =SecurityUtils.getSubject();
+        String username=(String)currentUser.getPrincipal();
+        User user=userService.findByUserName(username);
+        userinfo.setId(user.getId());
+        userInfoService.updateIntro(userinfo);
+
     }
 }
